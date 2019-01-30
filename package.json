@@ -1,0 +1,33 @@
+{
+  "name": "skyfixel",
+  "version": "1.1.2",
+  "description": "Beta",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Dark7oveRR",
+  "license": "ISC",
+  "dependencies": {
+    "bot-utils": "^1.2.1",
+    "canvas": "^2.1.0",
+    "discord.js": "^11.4.2",
+    "discord.js-musicbot-addon": "^13.0.0",
+    "ffmpeg": "0.0.4",
+    "fortnitetracker-7days-stats": "^3.1.1",
+    "fs": "0.0.1-security",
+    "get-youtube-id": "^1.0.0",
+    "jimp": "^0.5.6",
+    "moment": "^2.24.0",
+    "music-metadata": "^3.1.6",
+    "opusscript": "0.0.6",
+    "queue": "^4.5.0",
+    "quick.hook": "^1.5.1",
+    "simple-youtube-api": "^5.1.1",
+    "snekfetch": "^4.0.4",
+    "steam-provider": "^0.3.2",
+    "util": "^0.11.1",
+    "youtube-info": "^1.3.2",
+    "ytdl-core": "^0.27.1"
+  }
+}
