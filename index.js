@@ -7,7 +7,7 @@ const client = new Discord.Client();
 
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
-  client.user.setGame(`Darven | .help`,"https://www.twitch.tv/dark7overr")
+  client.user.setGame(`Darven | -help`,"https://www.twitch.tv/dark7overr")
   client.user.setStatus("dnd")
 });
 var prefix = "-"
@@ -16,7 +16,7 @@ var prefix = "-"
 
 client.on('message', message => { 
     var user = message.mentions.users.first() || message.author; 
-    if (message.content.startsWith(".avatar")) { 
+    if (message.content.startsWith("-avatar")) { 
     message.channel.send(`This avatar For ${user} link : ${user.avatarURL}`);
      } 
     });
@@ -199,7 +199,7 @@ client.on("ready", () => {
 /////////////////////////////////////////////////////////////////////////////
 
 client.on('message', message => {
-   if(message.content.startsWith(".invites")) {
+   if(message.content.startsWith("-invites")) {
     message.guild.fetchInvites().then(invs => {
       let user = message.mentions.users.first() || message.author
       let personalInvites = invs.filter(i => i.inviter.id === user.id);
@@ -228,7 +228,7 @@ client.on('message', message => {
 
     let args = message.content.split(' ').slice(1).join(' ');
      if(!message.channel.guild) return;
-if(message.content.split(' ')[0] == '.bc') {
+if(message.content.split(' ')[0] == '-bc') {
          message.react("✔️")
           let embed = new Discord.RichEmbed()
     .setColor("RANDOM")
