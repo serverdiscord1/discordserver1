@@ -10,7 +10,7 @@ client.on('ready', () => {
   client.user.setGame(`Darven | .help`,"https://www.twitch.tv/dark7overr")
   client.user.setStatus("dnd")
 });
-var prefix = "."
+var prefix = "-"
 
 /////////////////////////////////////////////////////////////////////////////
 
