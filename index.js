@@ -189,15 +189,6 @@ client.on('guildMemberAdd', member => {
 
 /////////////////////////////////////////////////////////////////////////////
 
-client.on("ready", () => {
-  function rb() {
-    client.guilds.get('533988060644507659').roles.find("name", "☯.⌠Rainbow⌡.☯").setColor("RANDOM");
-  };
-  setInterval(rb, 1900);
-});
-
-/////////////////////////////////////////////////////////////////////////////
-
 client.on('message', message => {
    if(message.content.startsWith("-invites")) {
     message.guild.fetchInvites().then(invs => {
