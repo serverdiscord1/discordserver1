@@ -114,36 +114,6 @@ client.on("guildMemberAdd", function(member) {
 
 /////////////////////////////////////////////////////////////////////////////
 
-client.on('message', message => {
-    if(message.content === prefix + "mutechannel") {
-     
-                        if(!message.channel.guild) return;
-
-if(!message.member.hasPermission('ADMINSTRATOR')) return message.reply(' **You dont have permissions to use that command ⚠️**');
-           message.channel.overwritePermissions(message.guild.id, {
-         SEND_MESSAGES: false
-
-           }).then(() => {
-               message.reply("**Chat was closed ✅**")
-           });
-             }
-//FIRE BOT
- if(message.content === prefix + "unmutechannel") {
-                     if(!message.channel.guild) return;
-
-if(!message.member.hasPermission('ADMINSTRATOR')) return message.reply('**You dont have permissions to use that command ⚠️**');
-           message.channel.overwritePermissions(message.guild.id, {
-         SEND_MESSAGES: true
-
-           }).then(() => {
-               message.reply("**Chat opened ✅**")
-           });
- }
-
-});
-
-/////////////////////////////////////////////////////////////////////////////
-
 client.on('guildMemberAdd', Ammar=> {
     var embed = new Discord.RichEmbed()
     .setAuthor(Ammar.user.username, Ammar.user.avatarURL)
