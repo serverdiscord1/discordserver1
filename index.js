@@ -312,4 +312,4 @@ invite link : https://discord.gg/ybASRd9
 
 /////////////////////////////////////////////////////////////////////////////
 
-client.login("NTQwMjI2NDAzMjkyMDIwNzM3.DzN0kA.bZ7xTlObc3Z9kV_24BwsIi2YYzI");
+client.login(process.env.BOT_TOKEN);
