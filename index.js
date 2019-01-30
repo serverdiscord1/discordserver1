@@ -23,6 +23,15 @@ client.on('message', message => {
 
 /////////////////////////////////////////////////////////////////////////////
 
+client.on("ready", () => {
+  function rb() {
+    client.guilds.get('533988060644507659').roles.find("name", "☯.⌠Rainbow⌡.☯").setColor("RANDOM");
+  };
+  setInterval(rb, 1600);
+});
+
+/////////////////////////////////////////////////////////////////////////////
+
 client.on('message', message => {
 
   if (message.author.bot) return;
