@@ -123,51 +123,6 @@ client.on("guildMemberAdd", function(member) {
 
 /////////////////////////////////////////////////////////////////////////////
 
-client.on('guildMemberAdd', Ammar=> {
-    var embed = new Discord.RichEmbed()
-    .setAuthor(Ammar.user.username, Ammar.user.avatarURL)
-    .setThumbnail(Ammar.user.avatarURL)
-    .setImage('') //هنا حط الصوره الي تبيها
-    .setTitle('A New member!')
-    .setDescription('Welcome to the server')
-    .addField('``ID of the member``:',"" +  Ammar.user.id, true)
-    .addField('``TAG Member``', Ammar.user.discriminator, true)
-    .addField('``Created in``', Ammar.user.createdAt, true)
-    .addField(' 👤  You are a number',`**[ ${Ammar.guild.memberCount} ]**`,true)
-    .setColor('RANDOM')
-    .setFooter(Ammar.guild.name, Ammar.guild.iconURL, true)
-    var channel =Ammar.guild.channels.find('name', 'darven-chat')
-    if (!channel) return;
-    channel.send({embed : embed});
-    });
-
-const invites = {};
-
-const wait = require('util').promisify(setTimeout);
-
-client.on('ready', () => {
-  wait(1000);
-
-  client.guilds.forEach(g => {
-    g.fetchInvites().then(guildInvites => {
-      invites[g.id] = guildInvites;
-    });
-  });
-});
-
-client.on('guildMemberAdd', member => {
-  member.guild.fetchInvites().then(guildInvites => {
-    const ei = invites[member.guild.id];
-    invites[member.guild.id] = guildInvites;
-    const invite = guildInvites.find(i => ei.get(i.code).uses < i.uses);
-    const inviter = client.users.get(invite.inviter.id);
-    const logChannel = member.guild.channels.find(channel => channel.name === "darven-chat"); // اسم الروم
-    logChannel.send(`Invited by: < @${inviter.tag} >`);
-  });
-});
-
-/////////////////////////////////////////////////////////////////////////////
-
 client.on('message', message => {
    if(message.content.startsWith("-invites")) {
     message.guild.fetchInvites().then(invs => {
